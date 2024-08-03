@@ -1,0 +1,14 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: "java-test-2"
+  description: "java test compoment"
+  tags:
+    - java
+spec:
+  type: service
+  lifecycle: experimental
+  owner: "group:default/developers"
+  system: system:default/bookinfo
+  consumesApis: 
+    - 
