@@ -53,11 +53,25 @@ spec:
     - name: maven-settings
       workspace: maven-settings
 
-  - name: package
+    - name: test
     taskRef:
       name: maven
       kind: ClusterTask
     runAfter: ["build"]
+    params:
+    - name: GOALS
+      value: ["test"]
+    workspaces:
+    - name: source
+      workspace: maven-repo
+    - name: maven-settings
+      workspace: maven-settings
+
+  - name: package
+    taskRef:
+      name: maven
+      kind: ClusterTask
+    runAfter: ["test"]
     params:
     - name: GOALS
       value: ["package"]
