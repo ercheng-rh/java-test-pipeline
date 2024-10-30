@@ -53,7 +53,7 @@ spec:
     - name: maven-settings
       workspace: maven-settings
 
-    - name: test
+  - name: test
     taskRef:
       name: maven
       kind: ClusterTask
